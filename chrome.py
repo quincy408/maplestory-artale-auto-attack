@@ -75,9 +75,6 @@ class ObjectDetection:
         screenshot = pyautogui.screenshot(region=(x, y, w, h))
         screenshot.save("screenshot.png")
 
-    # @classmethod
-    # def calculate_monster_counts(cls, player_results, monster_results):
-
     @classmethod
     def detection_result(cls, display_detection_result=True):
         img = cv2.imread('screenshot.png')
@@ -373,16 +370,6 @@ class MainScript:
         self.display_detection_result = display_detection_result
         while True:
             time.sleep(1)
-
-
-if __name__ == '__main__':
-    
-    user_name = 'user'
-    monster_name = "mo_dragon"
-    display_detection_result = False
-    ObjectDetection.load_model(user_model_name=user_name, monster_model_name=monster_name)
-    script = MainScript()
-    script.main(display_detection_result=display_detection_result)
 
 
         
